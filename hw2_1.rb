@@ -29,21 +29,31 @@ end
 # puts 10.rupees.in(:euro)
 # puts 10.rupee.in(:euro)    
 
-def palindrome?(testString)
-	result = false
-	testString.downcase!()
-	noSpaces = testString.gsub(/\s+|\W+/, "")
-	if noSpaces == noSpaces.reverse()
-	    result = true
-	end
-	result
-end
+# def palindrome?(testString)
+	# result = false
+	# testString.downcase!()
+	# noSpaces = testString.gsub(/\s+|\W+/, "")
+	# if noSpaces == noSpaces.reverse()
+	    # result = true
+	# end
+	# result
+# end
 
 class String
 	def palindrome?
+#		puts self.chars.to_a.to_s
+		self.chars.palindrome?
+	end
+end
+
+module Enumerable
+	def palindrome?
 		result = false
-		self.downcase!()
-		noSpaces = self.gsub(/\s+|\W+/, "")
+		testString = self.to_a.join
+#puts self.to_a.join
+#puts testString
+		testString.downcase!()
+		noSpaces = testString.gsub(/\s+|\W+/, "")
 		if noSpaces == noSpaces.reverse()
 			result = true
 		end
@@ -62,3 +72,6 @@ end
 #end
 #puts 'foo'.palindrome?
 #puts "ISAPALINILAPASI, ".palindrome?
+#puts [1,2,3,2,1].palindrome?
+#puts {"a"=>1,'b'=>'2', 'c'=>3, 'd'=>2, 'e'=>1}.palindrome?
+#puts {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
