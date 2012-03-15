@@ -74,4 +74,7 @@ end
 #puts "ISAPALINILAPASI, ".palindrome?
 #puts [1,2,3,2,1].palindrome?
 #puts {"a"=>1,'b'=>'2', 'c'=>3, 'd'=>2, 'e'=>1}.palindrome?
-#puts {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
+#a = {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
+#puts a.palindrome?
+#a = {"a"=>1,'b'=>2, 'c'=>3, 'd'=>2, 'e'=>1}
+#puts a.palindrome?
