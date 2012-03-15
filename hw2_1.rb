@@ -21,8 +21,8 @@ class Numeric
   end
 end
 
-#20.euros
-puts 5.dollars.in(:euros)  # 5 / 1.292
+#puts 20.euro.in(:dollars)
+#puts 5.dollars.in(:euros)  # 5 / 1.292
 # puts 10.euros.in(:rupees)  #
 # puts 1.dollar.in(:rupees)
 # puts 1.dollar.in(:rupee)
