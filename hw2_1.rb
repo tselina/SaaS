@@ -29,19 +29,8 @@ end
 # puts 10.rupees.in(:euro)
 # puts 10.rupee.in(:euro)    
 
-# def palindrome?(testString)
-	# result = false
-	# testString.downcase!()
-	# noSpaces = testString.gsub(/\s+|\W+/, "")
-	# if noSpaces == noSpaces.reverse()
-	    # result = true
-	# end
-	# result
-# end
-
 class String
 	def palindrome?
-#		puts self.chars.to_a.to_s
 		self.chars.palindrome?
 	end
 end
@@ -49,8 +38,8 @@ end
 module Enumerable
 	def palindrome?
 		result = false
-		testString = self.to_a.join
-#puts self.to_a.join
+		testString = self.respond_to?('values') ? self.values.join : self.to_a.join
+#puts self.values.join
 #puts testString
 		testString.downcase!()
 		noSpaces = testString.gsub(/\s+|\W+/, "")
@@ -60,21 +49,18 @@ module Enumerable
 		result
 	end
 end
-#testStrings = [
-#	"A man, a plan, a canal -- Panama",
-#	"ISAPALINILAPASI, ",
-#	"A,>T=OYOTA",
-#	"Madam, I'm Adam!)",
-#	"Abracadabra"
-#]
-#testStrings.each do |testString|
-#	puts palindrome?(testString)
-#end
-#puts 'foo'.palindrome?
-#puts "ISAPALINILAPASI, ".palindrome?
-#puts [1,2,3,2,1].palindrome?
-#puts {"a"=>1,'b'=>'2', 'c'=>3, 'd'=>2, 'e'=>1}.palindrome?
-#a = {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
-#puts a.palindrome?
-#a = {"a"=>1,'b'=>2, 'c'=>3, 'd'=>2, 'e'=>1}
-#puts a.palindrome?
+# testStrings = [
+	# "A man, a plan, a canal -- Panama",
+	# "ISAPALINILAPASI, ",
+	# "A,>T=OYOTA",
+	# "Madam, I'm Adam!)",
+	# "Abracadabra",
+	# "foo",
+	# [1,2,3,2,1],
+	# [1,3,3,2,1],
+	# {"a"=>1,'b'=>2, 'c'=>3, 'd'=>2, 'e'=>1},
+	# {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
+# ]
+# testStrings.each do |testString|
+	# puts testString.inspect.to_s + ' ' + testString.palindrome?.to_s
+# end
